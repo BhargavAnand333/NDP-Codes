@@ -1,0 +1,188 @@
+NDP Lab Questions
+
+Lab1
+
+Q1
+Write two separate C programs (one for server and other for client) using socket
+APIs for TCP, to implement the client-server model such that the client should send
+a set of integers along with a choice to search for a number or sort the given set
+in ascending/descending order or split the given set to odd and even to the server.
+The server performs the relevant operation according to the choice. Client should
+continue to send the messages until the user enters selects the choice “exit”.
+
+Q2
+Write two separate C programs (one for server and other for client) using UNIX
+socket APIs for UDP, in which the client accepts a string from the user and sends it
+to the server. The server will check if the string is palindrome or not and send the
+result with the length of the string and the number of occurrences of each vowel in
+the string to the client. The client displays the received data on the client screen. The
+process repeats until user enter the string “Halt”. Then both the processes terminate.
+(The program should make use of TCP and UDP separately).
+
+********************************
+
+Lab2
+
+Q1
+Write two separate C programs (one for server and other for client) using UNIX
+socket APIs for both TCP and UDP to implement the following: The user at the
+client side sends name of the file to the server. If the file is not present, the server
+sends “File not present” to the client and terminates. Otherwise the following menu
+is displayed at the client side.
+1. Search 2. Replace 3. Reorder 4. Exit
+
+If the user at the client side wants to search a string in file, the users sends to
+the server option ‘1’ along with the string to be searched. The server searches
+for the string in the file. If present, it sends the number of times the string has
+occurred to the client, else the server sends ‘String not found’ message to the
+client.
+
+• If the user wants to replace a string, along with option 2, the two strings ‘str1’
+and ‘str2’ are sent to the server. The Server searches for str1 in the file and
+replaces it with ‘str2’. After replacing the string, ‘String replaced’ message is
+sent to the client. If it is not found ‘String not found’ command is sent to the
+client.
+
+• Option 3 rearranges the entire text in the file in increasing order of their
+ASCII value.
+
+• To terminate the application option ‘4’ is selected
+
+
+********************************
+
+Lab3
+
+Q1
+Write two separate C programs using UNIX socket APIs illustrate full duplex mode
+chat application between a single client and server using connection oriented service.
+Display PID and PPID of both parent and child processes.
+
+Q2
+Write two separate C programs using UNIX socket APIs illustrate half duplex mode
+chat application between a single client and server connection less service in which
+the server estimates and prints all permutations of a string sent by the client.
+
+Q3
+Write two separate C programs (one for server and other for client) using socket
+APIs, to implement the following connection-oriented client-server model.
+
+(a) The user at the client side sends an alphanumeric string to the server.
+
+(b) The child process at the server sorts the numbers of the alphanumeric string
+in ascending order. The parent process at the server sorts the characters of the
+alphanumeric string in descending order.
+
+(c) Both the processes send the results to the client along with its corresponding
+process ID.
+
+Sample Output: At the client side:
+Input string: hello451bye7324
+At the server side:
+Output at the child process of the server: 1234457
+Output at the parent process of the server: yollheeb
+
+
+********************************
+
+Lab4
+
+Q1
+Write two separate C programs (one for server and other for client) using socket APIs
+for TCP and UDP to perform the following. The user at the client side has an option
+to enter:
+1. Registration Number
+2. Name of the Student
+3. Subject Code.
+The Client sends the selected option along with the requisite details to the server.
+Based on the options received the parent process in the server assigns the task to
+respective child process.
+
+(a) If registration number is sent then the first child process sends Name and
+Residential Address of the student along with the PID of the child process.
+
+(b) If Name of the Student is received then the second child process sends student
+enrollment details (Dept., Semester, Section and Courses Registered) along
+with the PID of the child process.
+
+(c) If Subject Code is entered then the third child process sends the corresponding
+marks obtained in that subject along with its PID.
+
+(d) The details sent by the server have to be displayed at the client.
+
+
+Q2
+Write two separate C programs (one for server and other for client) using UNIX
+socket APIs using connection oriented services to implement DNS Server. Accept
+suitable input messages from the user. Assume the server has access to database.txt
+(can be a structure too). Response is always displayed at the client side.
+
+********************************
+
+Lab5
+
+Q1
+Write a single server and multiple client program to illustrate multiple clients
+communicating with a concurrent server. The client1 on establishing successful
+connection sends ”Institute Of” string to the server along with its socket address.
+The client2 on establishing successful connection sends ”Technology” string to the
+server along with its socket address. The server opens a text file having the keyword
+”Manipal”, append the keywords ”Institute of” and ”Technology” and displays
+”Manipal Institute of Technology” along with the socket addresses of the clients . If
+the number of clients connected exceeds 2, the server sends ”terminate session” to
+all clients and the program terminates
+
+Q2
+Write a single server multiple client program to illustrate multiple clients
+communicating with a single iterative server. The client on establishing successful
+connection prompts the user to enter 2 strings which is sent to the server along with
+client socket address. The server checks whether the strings are anagrams or not and sends an appropriate message to the client. The result obtained is then displayed on
+the client side. The server displays the date and time along with client socket
+address that it is connected to it at any instant.
+
+********************************
+
+Lab6
+
+Q1
+Write a C program to transmit the data (binary values) from the sender side to receiver.
+The receiver side has to check whether the transmit data is corrupt or not using the
+parity technique – odd or even parity.
+
+Q2
+Write a C program to transmit the data (set of characters) from the sender side to
+receiver. The receiver side must check whether the transmit data is corrupted or not
+corrupted using the CRC polynomial techniques – CRC 12, CRC 16, CRC CCIP.
+
+Q3
+Implement the Hamming code method to detect the error in transmitted data and
+correct the error bit in the transmitted data.
+
+*********************************
+
+Lab7
+
+Q1
+Write a C program to avoid the congestion in network by using the leaky bucket method.
+Suppose the network packets arrive at a leaky bucket policer at time interval t = 1, 2, 3, 5, 6, 8, 11, 12, 15, 16, and 19 seconds with a packet size of 4 bytes each. Assume that the
+leaky bucket size X= 10 (queue size) bytes and the outgoing rate is one byte for every
+second. Identify the conforming and nonconforming packets in the queue and display the
+process on the screen.
+
+Q2
+Write a C program to avoid the congestion in network by using the Token bucket method.
+Assume that we have a token bucket shaper that has a replenishment rate r = 10 KBps, an
+infinite maximum rate R, a bucket size b = 50 Kbytes and that the bucket starts off full.
+Also assume that a sender emits 15 Kbytes packet size every 0.5 seconds in a periodic manner, starting at t = 0.5 seconds. For this question, you can assume that if sufficient
+tokens are available, packets pass through the token bucket instantaneously, otherwise
+they are queued until there are.
+
+i. How many tokens are left in the bucket after 1.5 seconds?
+
+ii. How long will it take until packets start to be queued or dropped?
+
+iii. Now, presume the sender can send as much as they want, whenever they want. If the
+token bucket is changed to enforce a maximum rate R of 20 KBps, what would the
+maximum possible burst size be? 
+
+*********************************
