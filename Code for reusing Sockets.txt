@@ -1,0 +1,11 @@
+Code for reusing Sockets
+
+int opt = 1;
+setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+
+Put this code immediately after the create socket function
+
+If this doesn't work:
+1) rm/tmp/chat_socket
+2) ps aux | grep server
+3) kill <PID>
